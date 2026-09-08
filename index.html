@@ -1,74 +1,151 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Meghu Website</title>
 
-<style>
-    body {
-        background-color: lightpink;
-        text-align: center;
-        font-family: Arial;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-        background-color: white;
-        width: 80%;
-        margin: 50px auto;
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 5px 15px gray;
-    }
+    <title>Meghu Website 💜</title>
 
-    img {
-        width: 220px;
-        border-radius: 25px;
-        border: 4px solid purple;
-        box-shadow: 0 8px 20px gray;
-        margin-bottom: 20px;
-    }
+    <style>
 
-    h1 {
-        color: purple;
-    }
+        /* Whole page */
+        body {
+            background-color: lightpink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
 
-    p {
-        color: gray;
-        font-size: 18px;
-    }
+        /* Main card */
+        .container {
+            background-color: white;
+            width: 80%;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px gray;
+        }
 
-    button {
-        background-color: purple;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 10px;
-        font-size: 16px;
-    }
+        /* Photo */
+        img {
+            width: 220px;
+            max-width: 90%;
+            border-radius: 25px;
+            border: 4px solid purple;
+            box-shadow: 0 8px 20px gray;
+            margin-bottom: 20px;
+        }
 
-    button:hover {
-        transform: scale(1.05);
-    }
-</style>
+        /* Main heading */
+        h1 {
+            color: purple;
+            font-size: 28px;
+        }
+
+        /* About heading */
+        h2 {
+            color: #d63384;
+            margin-top: 25px;
+        }
+
+        /* Paragraph */
+        p {
+            color: gray;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Button */
+        button {
+            background-color: purple;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* Button hover */
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Small screen */
+        @media (max-width: 600px) {
+
+            .container {
+                width: 85%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
 
 <body>
 
+    <!-- Main website card -->
+
     <div class="container">
 
-        <img src="Screenshot_20260830_114341_Instagram.jpg" alt="Meghu Photo">
+        <!-- Your photo -->
+        <img src="Screenshot_20260830_114341_Instagram.jpg"
+             alt="Meghu Photo">
 
+        <!-- Welcome -->
         <h1>Welcome to Meghu Website 💜</h1>
 
-        <p>This is my first website ✨</p>
+        <p>
+            This is my first website ✨
+        </p>
+
+
+        <!-- About Me -->
         <h2>About Me 🌸</h2>
 
-<p>
-    Hi! I'm Meghu 💜<br>
-    Welcome to my little website ✨<br>
-    I love creativity, editing and learning new things! 💻🌷
-</p>
+        <p>
+            Hi! I'm Meghu 💜<br>
+            Welcome to my little website ✨<br>
+            I love creativity, editing and learning new things! 💻🌷
+        </p>
 
-        <button onclick="sayHello()">Click Me 👋</button>
+
+        <!-- Button -->
+        <button onclick="sayHello()">
+            Click Me 👋
+        </button>
 
     </div>
 
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function sayHello() {
+
+            alert("Hello Meghu! 👋✨");
+
+        }
+
+    </script>
+
 </body>
+
+</html>
