@@ -243,4 +243,584 @@ body.dark p {
     display: none;
     border-radius: 50%;
     width: 50px;
+    height: 50px;
+    padding: 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    nav a {
+        font-size: 13px;
+        margin: 4px;
+    }
+
+    .gallery img {
+        width: 145px;
+        height: 145px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#gallery">Gallery</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#birthday">Birthday</a>
+
+<a href="#contact">Contact</a>
+
+<a href="#login">Login</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- HOME -->
+
+<section id="home">
+
+<img class="profile"
+src="Screenshot_20260830_114341_Instagram.jpg"
+alt="Meghu Photo">
+
+<h1>
+Welcome to Meghu Website 💜
+</h1>
+
+<p>
+This is my first website ✨
+</p>
+
+<button onclick="alert('Hello Meghu! 👋✨')">
+Click Me 👋
+</button>
+
+<button onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>
+About Me 🌸
+</h2>
+
+<div class="card">
+
+<p>
+
+Hi! I'm Meghu 💜<br>
+
+Welcome to my little website ✨<br>
+
+I love creativity, editing and learning new things! 💻🌷
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2>
+My Gallery 📸
+</h2>
+
+<div class="gallery">
+
+<img
+src="Screenshot_20260830_114341_Instagram.jpg"
+alt="Meghu Photo">
+
+</div>
+
+<p>
+More photos coming soon ✨
+</p>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>
+My Skills 💻✨
+</h2>
+
+<div class="skills">
+
+<div class="skill">HTML</div>
+
+<div class="skill">CSS</div>
+
+<div class="skill">JavaScript</div>
+
+<div class="skill">Photo Editing</div>
+
+<div class="skill">Video Editing</div>
+
+</div>
+
+</section>
+
+
+<!-- BIRTHDAY -->
+
+<section id="birthday">
+
+<div class="birthday">
+
+<h2>
+🎂 Birthday Corner 🎂
+</h2>
+
+<p>
+Advance Happy Birthday Meghu! 💜✨
+</p>
+
+<button onclick="birthdayMessage()">
+Birthday Wish 🎁
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SOCIAL -->
+
+<section>
+
+<h2>
+Connect With Me 💜
+</h2>
+
+<div class="social">
+
+<a href="#"
+onclick="socialMessage()">
+Instagram 📸
+</a>
+
+<a href="#"
+onclick="socialMessage()">
+YouTube ▶️
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>
+Contact Me 📩
+</h2>
+
+<div class="card">
+
+<form onsubmit="contactMessage(event)">
+
+<input
+type="text"
+id="contactName"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+id="contactEmail"
+placeholder="Your Email"
+required>
+
+<textarea
+id="contactText"
+placeholder="Your Message"
+required></textarea>
+
+<br>
+
+<button type="submit">
+Send Message 📩
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- GUESTBOOK -->
+
+<section>
+
+<h2>
+Guestbook 💬
+</h2>
+
+<div class="card">
+
+<input
+type="text"
+id="guestName"
+placeholder="Your Name">
+
+<textarea
+id="guestMessage"
+placeholder="Write something nice..."></textarea>
+
+<br>
+
+<button onclick="addGuestMessage()">
+Post Message 💜
+</button>
+
+<div id="guestMessages"></div>
+
+</div>
+
+</section>
+
+
+<!-- MAP -->
+
+<section>
+
+<h2>
+Find Me 📍
+</h2>
+
+<div class="card">
+
+<p>
+Open Google Maps 🗺️
+</p>
+
+<button onclick="openMap()">
+Google Maps 🗺️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- LOGIN -->
+
+<section id="login">
+
+<h2>
+Login / Signup 🔐
+</h2>
+
+<div class="login-box">
+
+<input
+type="text"
+id="username"
+placeholder="Username">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<br>
+
+<button onclick="demoLogin()">
+Login 🔐
+</button>
+
+<button onclick="demoSignup()">
+Signup ✨
+</button>
+
+<p id="loginMessage"></p>
+
+</div>
+
+</section>
+
+
+<!-- LIKE -->
+
+<section>
+
+<h2>
+Do You Like My Website? 💜
+</h2>
+
+<button onclick="likeWebsite()">
+❤️ Like
+</button>
+
+<p id="likeText"></p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<section>
+
+<p>
+Made with 💜 by Meghu
+</p>
+
+<p>
+© 2026 Meghu Website
+</p>
+
+</section>
+
+
+</div>
+
+
+<!-- BACK TO TOP -->
+
+<button
+id="topButton"
+onclick="goTop()">
+
+↑
+
+</button>
+
+
+<script>
+
+
+function birthdayMessage() {
+
+alert(
+"Happy Birthday Meghu! 🎂💜✨"
+);
+
+}
+
+
+function socialMessage() {
+
+alert(
+"Add your Instagram or YouTube link in the code! 💜"
+);
+
+}
+
+
+function likeWebsite() {
+
+document.getElementById("likeText").innerHTML =
+"Thank you for liking my website! ❤️✨";
+
+}
+
+
+function toggleDarkMode() {
+
+document.body.classList.toggle("dark");
+
+}
+
+
+function contactMessage(event) {
+
+event.preventDefault();
+
+let name =
+document.getElementById("contactName").value;
+
+alert(
+"Thank you, " + name +
+"! 💜 Your message was received."
+);
+
+document.getElementById("contactName").value = "";
+
+document.getElementById("contactEmail").value = "";
+
+document.getElementById("contactText").value = "";
+
+}
+
+
+function addGuestMessage() {
+
+let name =
+document.getElementById("guestName").value;
+
+let message =
+document.getElementById("guestMessage").value;
+
+if (name === "" || message === "") {
+
+alert(
+"Please enter your name and message! 💜"
+);
+
+return;
+
+}
+
+let newMessage =
+document.createElement("div");
+
+newMessage.className =
+"guestbook-message";
+
+newMessage.innerHTML =
+"<strong>" + name +
+"</strong><br>" +
+message;
+
+document.getElementById("guestMessages")
+.appendChild(newMessage);
+
+document.getElementById("guestName").value = "";
+
+document.getElementById("guestMessage").value = "";
+
+}
+
+
+function openMap() {
+
+window.open(
+"https://www.google.com/maps",
+"_blank"
+);
+
+}
+
+
+function demoLogin() {
+
+let username =
+document.getElementById("username").value;
+
+let password =
+document.getElementById("password").value;
+
+if (username === "" || password === "") {
+
+document.getElementById("loginMessage").innerHTML =
+"Please enter username and password.";
+
+return;
+
+}
+
+document.getElementById("loginMessage").innerHTML =
+"Demo Login Successful! 💜";
+
+}
+
+
+function demoSignup() {
+
+let username =
+document.getElementById("username").value;
+
+let password =
+document.getElementById("password").value;
+
+if (username === "" || password === "") {
+
+document.getElementById("loginMessage").innerHTML =
+"Please enter username and password.";
+
+return;
+
+}
+
+document.getElementById("loginMessage").innerHTML =
+"Demo Signup Successful! 🎉";
+
+}
+
+
+window.onscroll = function() {
+
+if (
+document.documentElement.scrollTop > 250
+) {
+
+document.getElementById("topButton")
+.style.display = "block";
+
+}
+
+else {
+
+document.getElementById("topButton")
+.style.display = "none";
+
+}
+
+};
+
+
+function goTop() {
+
+window.scrollTo({
+
+top: 0,
+
+behavior: "smooth"
+
+});
+
+}
+
+</script>
+
+
+</body>
+
+    </html>
    
