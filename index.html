@@ -9,7 +9,6 @@
 
     <style>
 
-        /* Whole page */
         body {
             background-color: lightpink;
             text-align: center;
@@ -18,7 +17,6 @@
             padding: 20px;
         }
 
-        /* Main card */
         .container {
             background-color: white;
             width: 80%;
@@ -29,7 +27,6 @@
             box-shadow: 0 5px 20px gray;
         }
 
-        /* Photo */
         img {
             width: 220px;
             max-width: 90%;
@@ -39,26 +36,22 @@
             margin-bottom: 20px;
         }
 
-        /* Main heading */
         h1 {
             color: purple;
             font-size: 28px;
         }
 
-        /* About heading */
         h2 {
             color: #d63384;
             margin-top: 25px;
         }
 
-        /* Paragraph */
         p {
             color: gray;
             font-size: 18px;
             line-height: 1.6;
         }
 
-        /* Button */
         button {
             background-color: purple;
             color: white;
@@ -70,12 +63,10 @@
             margin-top: 15px;
         }
 
-        /* Button hover */
         button:hover {
             transform: scale(1.05);
         }
 
-        /* Small screen */
         @media (max-width: 600px) {
 
             .container {
@@ -97,26 +88,19 @@
 
 </head>
 
-
 <body>
-
-    <!-- Main website card -->
 
     <div class="container">
 
-        <!-- Your photo -->
         <img src="Screenshot_20260830_114341_Instagram.jpg"
              alt="Meghu Photo">
 
-        <!-- Welcome -->
         <h1>Welcome to Meghu Website 💜</h1>
 
         <p>
             This is my first website ✨
         </p>
 
-
-        <!-- About Me -->
         <h2>About Me 🌸</h2>
 
         <p>
@@ -125,26 +109,11 @@
             I love creativity, editing and learning new things! 💻🌷
         </p>
 
-
-        <!-- Button -->
-        <button onclick="sayHello()">
+        <button onclick="alert('Hello Meghu! 👋✨')">
             Click Me 👋
         </button>
 
     </div>
-
-
-    <!-- JavaScript -->
-
-    <script>
-
-        function sayHello() {
-
-            alert("Hello Meghu! 👋✨");
-
-        }
-
-    </script>
 
 </body>
 
