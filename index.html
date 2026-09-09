@@ -1,85 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Meghu Website 💜</title>
 
     <style>
 
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: lightpink;
-            text-align: center;
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffd6e7, #e8d5ff);
+            color: #333;
+            transition: 0.4s;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(128, 0, 128, 0.95);
+            padding: 15px 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 8px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ffd6e7;
         }
 
         .container {
-            background-color: white;
-            width: 80%;
-            max-width: 500px;
-            margin: 40px auto;
+            width: 90%;
+            max-width: 700px;
+            margin: 35px auto;
+            background: rgba(255, 255, 255, 0.96);
             padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 5px 20px gray;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px gray;
         }
 
-        img {
-            width: 220px;
-            max-width: 90%;
-            border-radius: 25px;
-            border: 4px solid purple;
-            box-shadow: 0 8px 20px gray;
-            margin-bottom: 20px;
+        section {
+            margin-top: 45px;
         }
 
-        h1 {
+        .hero h1 {
             color: purple;
-            font-size: 28px;
+            font-size: 34px;
+            animation: fadeIn 1.5s;
+        }
+
+        .hero p,
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .profile {
+            width: 230px;
+            max-width: 90%;
+            border-radius: 50%;
+            border: 5px solid purple;
+            box-shadow: 0 8px 25px gray;
+            transition: 0.4s;
+        }
+
+        .profile:hover {
+            transform: scale(1.05);
         }
 
         h2 {
             color: #d63384;
-            margin-top: 25px;
+            margin-bottom: 15px;
         }
 
-        p {
-            color: gray;
-            font-size: 18px;
-            line-height: 1.6;
+        .card {
+            background: #fff0f7;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid purple;
+            box-shadow: 0 5px 15px gray;
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.07) rotate(2deg);
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #f1d5ff;
+            color: purple;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
         }
 
         button {
             background-color: purple;
             color: white;
-            padding: 12px 25px;
             border: none;
+            padding: 12px 22px;
             border-radius: 12px;
             font-size: 16px;
             cursor: pointer;
-            margin-top: 15px;
+            margin: 8px;
+            transition: 0.3s;
         }
 
         button:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
+        }
+
+        input,
+        textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .social a {
+            display: inline-block;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px gray;
+        }
+
+        audio {
+            width: 90%;
+            margin: 15px 0;
+        }
+
+        .guestbook-message {
+            background: white;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .birthday {
+            background: #fff0f7;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .login-box {
+            background: #f8edff;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        body.dark {
+            background: linear-gradient(135deg, #17101c, #30203b);
+            color: white;
+        }
+
+        body.dark .container {
+            background: #241b29;
+        }
+
+        body.dark .card,
+        body.dark .birthday,
+        body.dark .login-box {
+            background: #35263c;
+        }
+
+        body.dark p {
+            color: #ddd;
+        }
+
+        #topButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+        }
+
+        #loginMessage {
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
         }
 
         @media (max-width: 600px) {
 
             .container {
-                width: 85%;
+                width: 92%;
                 padding: 20px;
             }
 
-            h1 {
-                font-size: 24px;
+            .hero h1 {
+                font-size: 27px;
             }
 
-            p {
-                font-size: 16px;
+            nav a {
+                font-size: 13px;
+                margin: 4px;
+            }
+
+            .gallery img {
+                width: 145px;
+                height: 145px;
             }
 
         }
@@ -88,39 +281,604 @@
 
 </head>
 
+
 <body>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#video">Video</a>
+
+        <a href="#contact">Contact</a>
+
+        <a href="#guestbook">Guestbook</a>
+
+        <a href="#login">Login</a>
+
+    </nav>
+
 
     <div class="container">
 
-        <img src="Screenshot_20260830_114341_Instagram.jpg"
-             alt="Meghu Photo">
 
-        <h1>Welcome to Meghu Website 💜</h1>
+        <!-- HOME -->
 
-        <p>
-            This is my first website ✨
-        </p>
+        <section id="home" class="hero">
 
-        <h2>About Me 🌸</h2>
+            <img class="profile"
+                 src="Screenshot_20260830_114341_Instagram.jpg"
+                 alt="Meghu Photo">
 
-        <p>
-            Hi! I'm Meghu 💜<br>
-            Welcome to my little website ✨<br>
-            I love creativity, editing and learning new things! 💻🌷
-        </p>
-        <h2>My Gallery 📸</h2>
+            <h1>
+                Welcome to Meghu Website 💜
+            </h1>
 
-<div class="gallery">
-    <img src="Screenshot_20260830_114341_Instagram.jpg"
-         alt="Meghu Photo">
-</div>
+            <p>
+                This is my first website ✨
+            </p>
 
-        <button onclick="alert('Hello Meghu! 👋✨')">
-            Click Me 👋
-        </button>
+            <button onclick="alert('Hello Meghu! 👋✨')">
+                Click Me 👋
+            </button>
+
+            <button onclick="toggleDarkMode()">
+                🌙 Dark Mode
+            </button>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section id="about">
+
+            <h2>
+                About Me 🌸
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    Hi! I'm Meghu 💜<br>
+                    Welcome to my little website ✨<br>
+                    I love creativity, editing and learning new things! 💻🌷
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALLERY -->
+
+        <section id="gallery">
+
+            <h2>
+                My Gallery 📸
+            </h2>
+
+            <div class="gallery">
+
+                <img src="Screenshot_20260830_114341_Instagram.jpg"
+                     alt="Meghu Photo">
+
+            </div>
+
+            <p>
+                More photos coming soon ✨
+            </p>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+
+            <h2>
+                My Skills 💻✨
+            </h2>
+
+            <div class="skills">
+
+                <div class="skill">
+                    HTML
+                </div>
+
+                <div class="skill">
+                    CSS
+                </div>
+
+                <div class="skill">
+                    JavaScript
+                </div>
+
+                <div class="skill">
+                    Photo Editing
+                </div>
+
+                <div class="skill">
+                    Video Editing
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MUSIC -->
+
+        <section id="music">
+
+            <h2>
+                My Music 🎵
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    Add your own music file to GitHub and put its
+                    filename inside the audio tag.
+                </p>
+
+                <audio controls>
+
+                    <source src="music.mp3"
+                            type="audio/mpeg">
+
+                    Your browser does not support audio.
+
+                </audio>
+
+            </div>
+
+        </section>
+
+
+        <!-- VIDEO -->
+
+        <section id="video">
+
+            <h2>
+                My Video 🎬
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    Add your own video file to GitHub and change
+                    the filename below.
+                </p>
+
+                <video controls>
+
+                    <source src="video.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+        </section>
+
+
+        <!-- BIRTHDAY -->
+
+        <section>
+
+            <div class="birthday">
+
+                <h2>
+                    🎂 Birthday Corner 🎂
+                </h2>
+
+                <p>
+                    Advance Happy Birthday Meghu! 💜✨
+                </p>
+
+                <button onclick="birthdayMessage()">
+                    Birthday Wish 🎁
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOCIAL -->
+
+        <section>
+
+            <h2>
+                Connect With Me 💜
+            </h2>
+
+            <div class="social">
+
+                <!-- Replace # with your real profile links -->
+
+                <a href="#"
+                   onclick="socialMessage()">
+                    Instagram 📸
+                </a>
+
+                <a href="#"
+                   onclick="socialMessage()">
+                    YouTube ▶️
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+
+            <h2>
+                Contact Me 📩
+            </h2>
+
+            <div class="card">
+
+                <form onsubmit="contactMessage(event)">
+
+                    <input type="text"
+                           id="contactName"
+                           placeholder="Your Name"
+                           required>
+
+                    <input type="email"
+                           id="contactEmail"
+                           placeholder="Your Email"
+                           required>
+
+                    <textarea id="contactText"
+                              placeholder="Your Message"
+                              required></textarea>
+
+                    <br>
+
+                    <button type="submit">
+                        Send Message 📩
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- GUESTBOOK -->
+
+        <section id="guestbook">
+
+            <h2>
+                Guestbook 💬
+            </h2>
+
+            <div class="card">
+
+                <input type="text"
+                       id="guestName"
+                       placeholder="Your Name">
+
+                <textarea id="guestMessage"
+                          placeholder="Write something nice..."></textarea>
+
+                <br>
+
+                <button onclick="addGuestMessage()">
+                    Post Message 💜
+                </button>
+
+                <div id="guestMessages"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOCATION -->
+
+        <section>
+
+            <h2>
+                Find Me 📍
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    You can add your Google Maps location here.
+                </p>
+
+                <button onclick="openMap()">
+                    Open Google Maps 🗺️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN -->
+
+        <section id="login">
+
+            <h2>
+                Login / Signup 🔐
+            </h2>
+
+            <div class="login-box">
+
+                <input type="text"
+                       id="username"
+                       placeholder="Username">
+
+                <input type="password"
+                       id="password"
+                       placeholder="Password">
+
+                <br>
+
+                <button onclick="demoLogin()">
+                    Login 🔐
+                </button>
+
+                <button onclick="demoSignup()">
+                    Signup ✨
+                </button>
+
+                <p id="loginMessage"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- LIKE -->
+
+        <section>
+
+            <h2>
+                Do You Like My Website? 💜
+            </h2>
+
+            <button onclick="likeWebsite()">
+                ❤️ Like
+            </button>
+
+            <p id="likeText"></p>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <section>
+
+            <p>
+                Made with 💜 by Meghu
+            </p>
+
+            <p>
+                © 2026 Meghu Website
+            </p>
+
+        </section>
+
 
     </div>
 
+
+    <!-- BACK TO TOP -->
+
+    <button id="topButton"
+            onclick="goTop()">
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        function birthdayMessage() {
+
+            alert(
+                "Happy Birthday Meghu! 🎂💜✨"
+            );
+
+        }
+
+
+        function socialMessage() {
+
+            alert(
+                "Add your real Instagram or YouTube link in the HTML code! 💜"
+            );
+
+        }
+
+
+        function likeWebsite() {
+
+            document.getElementById("likeText").innerHTML =
+                "Thank you for liking my website! ❤️✨";
+
+        }
+
+
+        function toggleDarkMode() {
+
+            document.body.classList.toggle("dark");
+
+        }
+
+
+        function contactMessage(event) {
+
+            event.preventDefault();
+
+            let name =
+                document.getElementById("contactName").value;
+
+            alert(
+                "Thank you, " + name + "! 💜 Your message was received."
+            );
+
+            document.getElementById("contactName").value = "";
+
+            document.getElementById("contactEmail").value = "";
+
+            document.getElementById("contactText").value = "";
+
+        }
+
+
+        function addGuestMessage() {
+
+            let name =
+                document.getElementById("guestName").value;
+
+            let message =
+                document.getElementById("guestMessage").value;
+
+            if (name === "" || message === "") {
+
+                alert(
+                    "Please enter your name and message! 💜"
+                );
+
+                return;
+
+            }
+
+            let newMessage =
+                document.createElement("div");
+
+            newMessage.className =
+                "guestbook-message";
+
+            newMessage.innerHTML =
+                "<strong>" + name +
+                "</strong><br>" +
+                message;
+
+            document.getElementById("guestMessages")
+                .appendChild(newMessage);
+
+            document.getElementById("guestName").value = "";
+
+            document.getElementById("guestMessage").value = "";
+
+        }
+
+
+        function openMap() {
+
+            window.open(
+                "https://www.google.com/maps",
+                "_blank"
+            );
+
+        }
+
+
+        function demoLogin() {
+
+            let username =
+                document.getElementById("username").value;
+
+            let password =
+                document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+
+                document.getElementById("loginMessage").innerHTML =
+                    "Please enter username and password.";
+
+                return;
+
+            }
+
+            document.getElementById("loginMessage").innerHTML =
+                "Demo login successful! 💜";
+
+        }
+
+
+        function demoSignup() {
+
+            let username =
+                document.getElementById("username").value;
+
+            let password =
+                document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+
+                document.getElementById("loginMessage").innerHTML =
+                    "Please enter username and password.";
+
+                return;
+
+            }
+
+            document.getElementById("loginMessage").innerHTML =
+                "Demo signup successful! 🎉";
+
+        }
+
+
+        window.onscroll = function() {
+
+            if (
+                document.documentElement.scrollTop > 250
+            ) {
+
+                document.getElementById("topButton")
+                    .style.display = "block";
+
+            } else {
+
+                document.getElementById("topButton")
+                    .style.display = "none";
+
+            }
+
+        };
+
+
+        function goTop() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+    </script>
+
+
 </body>
 
-</html>
+                </html>
